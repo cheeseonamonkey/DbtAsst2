@@ -1,50 +1,71 @@
 package com.example.dbtasst2.models;
 
 
+import com.example.dbtasst2.MainActivity;
+import com.example.dbtasst2.R;
 
-import java.sql.Time;
+import java.time.LocalTime;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Entry
 {
-    //abstract these two types of entries?
-    Rating rating;
-    boolean yesNoRating;
 
-    //references?
-    //EntryGroup parentEntryGroup;
-    //DayOfWeek parentDayOfWeek;
-    //Week parentWeek;
+    List<EntryItem> items = new ArrayList<>();
 
-    Time creationTime;
-    Time setTime;
+    LocalTime creationTime;
+    //LocalTime customTime;
 
-    EntryReason entryReason;
+    Reason reason;
 
-    public Entry()
+    public Entry(Reason reason)
     {
 
+
+        creationTime = LocalTime.now();
+
+        this.reason = reason;
+    }
+
+    //chain builder
+    public Entry addItem(String name, boolean booVal, EntryItem.Section section)
+    {
+        this.items.add(new EntryItem(name, booVal, section));
+
+        MainActivity.log.log("Adding item to entry " + this.reason.toString() + ": " + name, "Entry");
+
+        return this;
+    }
+
+    public Entry addItem(String name, int intVal, EntryItem.Section section)
+    {
+        this.items.add(new EntryItem(name, intVal, section));
+
+        MainActivity.log.log("Adding item to entry " + this.reason.toString() + ": " + name, "Entry");
+
+        return this;
     }
 
 
-    public enum Rating
+
+
+
+    public List<EntryItem> getItems()
     {
-        _0(0),
-        _1(1),
-        _2(2),
-        _3(3),
-        _4(4),
-        _5(5);
-
-        int value;
-
-        Rating(int v)
-        {
-            this.value = v;
-        }
-
+        return items;
     }
 
-    public enum EntryReason
+    public LocalTime getCreationTime()
+    {
+        return creationTime;
+    }
+
+    public Reason getReason()
+    {
+        return reason;
+    }
+
+    public enum Reason
     {
         MORNING,
         MIDDAY,
@@ -53,4 +74,9 @@ public class Entry
         OTHER,
         CUSTOM
     }
+
+
+
+
+
 }

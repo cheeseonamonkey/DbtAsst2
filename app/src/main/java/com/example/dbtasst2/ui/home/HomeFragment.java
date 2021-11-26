@@ -6,17 +6,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TabHost;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.example.dbtasst2.MainActivity;
-import com.example.dbtasst2.R;
 import com.example.dbtasst2.databinding.FragmentHomeBinding;
+import com.example.dbtasst2.ui.adapters.EntryAdapter;
 
 import java.time.DayOfWeek;
 import java.util.ArrayList;
@@ -45,7 +42,7 @@ public class HomeFragment extends Fragment
         for (int i = 0; i < binding.tabcontent.getChildCount(); i++)
         {
             tabList.add((LinearLayout) binding.tabcontent.getChildAt(i));
-            MainActivity.log.log(binding.tabcontent.getChildAt(i).toString());
+          //  MainActivity.log.log(binding.tabcontent.getChildAt(i).toString());
         }
 
 
@@ -81,8 +78,26 @@ public class HomeFragment extends Fragment
 
             tabHost.addTab(tabSpec);
 
-
         }
+
+        binding.recycEntriesSunday.setLayoutManager(new LinearLayoutManager(getContext()));
+        binding.recycEntriesMonday.setLayoutManager(new LinearLayoutManager(getContext()));
+        binding.recycEntriesTuesday.setLayoutManager(new LinearLayoutManager(getContext()));
+        binding.recycEntriesWednesday.setLayoutManager(new LinearLayoutManager(getContext()));
+        binding.recycEntriesThursday.setLayoutManager(new LinearLayoutManager(getContext()));
+        binding.recycEntriesFriday.setLayoutManager(new LinearLayoutManager(getContext()));
+        binding.recycEntriesSaturday.setLayoutManager(new LinearLayoutManager(getContext()));
+
+
+        binding.recycEntriesSunday.setAdapter(new EntryAdapter(MainActivity.diary.getCurrentWeek().getDays().get(0).getEntries(), getContext()));
+        binding.recycEntriesMonday.setAdapter(new EntryAdapter(MainActivity.diary.getCurrentWeek().getDays().get(1).getEntries(), getContext()));
+        binding.recycEntriesTuesday.setAdapter(new EntryAdapter(MainActivity.diary.getCurrentWeek().getDays().get(2).getEntries(), getContext()));
+        binding.recycEntriesWednesday.setAdapter(new EntryAdapter(MainActivity.diary.getCurrentWeek().getDays().get(3).getEntries(), getContext()));
+        binding.recycEntriesThursday.setAdapter(new EntryAdapter(MainActivity.diary.getCurrentWeek().getDays().get(4).getEntries(), getContext()));
+        binding.recycEntriesFriday.setAdapter(new EntryAdapter(MainActivity.diary.getCurrentWeek().getDays().get(5).getEntries(), getContext()));
+        binding.recycEntriesSaturday.setAdapter(new EntryAdapter(MainActivity.diary.getCurrentWeek().getDays().get(6).getEntries(), getContext()));
+
+
 
 
 

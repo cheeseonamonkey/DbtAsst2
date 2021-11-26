@@ -4,8 +4,13 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/chees/AndroidStudioProjects/DbtAsst2/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/chees/AndroidStudioProjects/DbtAsst2/app/src/main/res/layout/day_tab_card_layout.xml" value="0.5" />
+        <entry key="..\:/Users/chees/AndroidStudioProjects/DbtAsst2/app/src/main/res/layout/day_tab_layout.xml" value="0.35260416666666666" />
         <entry key="..\:/Users/chees/AndroidStudioProjects/DbtAsst2/app/src/main/res/layout/entry_list_item_layout.xml" value="0.35260416666666666" />
+        <entry key="..\:/Users/chees/AndroidStudioProjects/DbtAsst2/app/src/main/res/layout/fragment_dashboard.xml" value="0.35260416666666666" />
         <entry key="..\:/Users/chees/AndroidStudioProjects/DbtAsst2/app/src/main/res/layout/fragment_home.xml" value="0.33" />
+        <entry key="..\:/Users/chees/AndroidStudioProjects/DbtAsst2/app/src/main/res/layout/new_entry_fragment.xml" value="0.25" />
+        <entry key="..\:/Users/chees/AndroidStudioProjects/DbtAsst2/app/src/main/res/layout/settings_fragment.xml" value="0.33" />
         <entry key="..\:/Users/chees/AndroidStudioProjects/DbtAsst2/app/src/main/res/menu/bottom_nav_menu.xml" value="0.5" />
       </map>
     </option>

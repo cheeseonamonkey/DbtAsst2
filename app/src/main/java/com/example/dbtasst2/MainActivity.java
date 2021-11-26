@@ -2,6 +2,7 @@ package com.example.dbtasst2;
 
 import android.os.Bundle;
 
+import com.example.dbtasst2.models.Diary;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,7 +18,8 @@ public class MainActivity extends AppCompatActivity
 
     private ActivityMainBinding binding;
 
-    public static Global global = new Global();
+    public static Diary diary = new Diary();
+
     public static MyLogger log = new MyLogger();
 
 
@@ -33,7 +35,7 @@ public class MainActivity extends AppCompatActivity
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.navigation_home, R.id.navigation_dashboard)
+                R.id.navigation_home, R.id.navigation_settings)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);

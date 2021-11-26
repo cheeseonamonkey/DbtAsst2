@@ -4,6 +4,7 @@ package com.example.dbtasst2.models;
 
 import java.time.LocalDate;
 import java.time.temporal.TemporalUnit;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
@@ -32,6 +33,8 @@ public class Week
         weekStartDate = LocalDate.now();
         weekEndDate = weekStartDate.plusDays(7);
 
+        days = new ArrayList<>();
+
         for (int i = 0; i < 7; i++)
         {
             days.add(new Day(weekStartDate.plusDays(i)));
@@ -52,7 +55,10 @@ public class Week
     }
 
 
-
+    public List<Day> getDays()
+    {
+        return days;
+    }
 
     public void SetDefaults()
     {

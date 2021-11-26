@@ -1,21 +1,24 @@
 package com.example.dbtasst2.models;
 
+import com.example.dbtasst2.MainActivity;
+
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class Day
 {
-    //references? maybe use a method
-    List<Section> entryGroups;
+    //references?
+    List<Entry> entries = new ArrayList<>();
 
     DayOfWeek dayOfWeek;
 
     LocalDate date;
 
-    boolean startDay;
+
+
+    //boolean startDay;
 
 
     public Day(LocalDate date)
@@ -27,14 +30,21 @@ public class Day
 
     }
 
-    public List<Entry> GetAllEntries()
+    public List<Entry> getEntries()
     {
-        return new ArrayList<>();
+        return entries;
     }
 
-    public List<Section> GetAllSections()
+
+
+    public Entry addEntry(Entry.Reason reason)
     {
-        return new ArrayList<>();
+        Entry entOut = new Entry(reason);
+        entries.add(entOut);
+
+        MainActivity.log.log("Adding entry: " + entOut.reason.toString(), "Entry");
+
+        return entOut;
     }
 
 }
