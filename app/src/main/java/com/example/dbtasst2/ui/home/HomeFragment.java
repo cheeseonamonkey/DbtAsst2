@@ -8,12 +8,14 @@ import android.widget.LinearLayout;
 import android.widget.TabHost;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.example.dbtasst2.MainActivity;
 import com.example.dbtasst2.databinding.FragmentHomeBinding;
 import com.example.dbtasst2.ui.adapters.EntryAdapter;
+import com.example.dbtasst2.ui.newEntry.NewEntryFragment;
 
 import java.time.DayOfWeek;
 import java.util.ArrayList;
@@ -47,7 +49,7 @@ public class HomeFragment extends Fragment
 
 
 
-
+//=======================================================================
         //listeners:
 
         //tab host week
@@ -56,13 +58,14 @@ public class HomeFragment extends Fragment
         setupDayTabs(tabHostWeek);
 
 
+        //fab new entry
         binding.fabNewEntry.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View view)
             {
-
-                //new NewEntryFragment().show(getChildFragmentManager(), "splashFragment");
+                DialogFragment entryDialog = NewEntryFragment.newInstance();
+                entryDialog.show(getChildFragmentManager(), "newEntryFragment");
 
             }
         });
