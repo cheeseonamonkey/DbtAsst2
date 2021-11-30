@@ -50,29 +50,9 @@
                             android:entries="@array/oneToFive"
                             android:minWidth="50dp"
                             android:minHeight="50dp"
-                            android:textAlignment="textEnd" />
+                            android:textAlignment="textEnd"
+                            tools:ignore="DuplicateSpeakableTextCheck" />
 
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="right"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="TextView" />
-
-                        <Spinner
-                            android:id="@+id/spnHms"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:entries="@array/oneToFive"
-                            android:minWidth="50dp"
-                            android:minHeight="50dp"
-                            android:textAlignment="textEnd" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -116,6 +96,33 @@
                             android:minHeight="50dp"
                             android:textAlignment="textEnd" />
                     </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="TextView" />
+
+                        <Spinner
+                            android:id="@+id/spnHms"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:entries="@array/oneToFive"
+                            android:minWidth="50dp"
+                            android:minHeight="50dp"
+                            android:textAlignment="textEnd" />
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/button2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Next" />
 
 
                 </LinearLayout>
@@ -169,6 +176,12 @@
                             android:textAlignment="textEnd" />
                     </LinearLayout>
 
+                    <Button
+                        android:id="@+id/button3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Next" />
+
                 </LinearLayout>
 
                 <LinearLayout
@@ -189,49 +202,7 @@
                             android:text="TextView" />
 
                         <Spinner
-                            android:id="@+id/spnHappiness"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:entries="@array/oneToFive"
-                            android:minWidth="50dp"
-                            android:minHeight="50dp"
-                            android:textAlignment="textEnd" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="right"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="TextView" />
-
-                        <Spinner
                             android:id="@+id/spnAnger"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:entries="@array/oneToFive"
-                            android:minWidth="50dp"
-                            android:minHeight="50dp"
-                            android:textAlignment="textEnd" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="right"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="TextView" />
-
-                        <Spinner
-                            android:id="@+id/spnShame"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:entries="@array/oneToFive"
@@ -273,6 +244,27 @@
                             android:text="TextView" />
 
                         <Spinner
+                            android:id="@+id/spnShame"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:entries="@array/oneToFive"
+                            android:minWidth="50dp"
+                            android:minHeight="50dp"
+                            android:textAlignment="textEnd" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="TextView" />
+
+                        <Spinner
                             android:id="@+id/spnSadness"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -282,6 +274,32 @@
                             android:textAlignment="textEnd" />
                     </LinearLayout>
 
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="TextView" />
+
+                        <Spinner
+                            android:id="@+id/spnHappiness"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:entries="@array/oneToFive"
+                            android:minWidth="50dp"
+                            android:minHeight="50dp"
+                            android:textAlignment="textEnd" />
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/button4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Next" />
 
 
                 </LinearLayout>
@@ -324,7 +342,7 @@
                             android:text="TextView" />
 
                         <Spinner
-                            android:id="@+id/spnSelfValidation"
+                            android:id="@+id/spnAttempts"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:minWidth="50dp"
@@ -344,13 +362,19 @@
                             android:text="TextView" />
 
                         <Spinner
-                            android:id="@+id/spnAttempts"
+                            android:id="@+id/spnSelfValidation"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:minWidth="50dp"
                             android:minHeight="50dp"
                             android:textAlignment="textEnd" />
                     </LinearLayout>
+
+                    <Button
+                        android:id="@+id/button5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Okay" />
 
                 </LinearLayout>
             </FrameLayout>
