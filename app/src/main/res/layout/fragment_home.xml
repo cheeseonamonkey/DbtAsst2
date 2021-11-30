@@ -7,6 +7,13 @@
     android:orientation="vertical"
     tools:context=".ui.home.HomeFragment">
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabNewEntry"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:src="@android:drawable/ic_input_add" />
+
     <Spinner
         android:id="@+id/spinner"
         android:layout_width="match_parent"
@@ -37,7 +44,7 @@
 
 
                 <LinearLayout
-                    android:id="@+id/tab1"
+                    android:id="@+id/weekdaytab1"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
@@ -46,11 +53,14 @@
                         android:id="@+id/recycEntriesSunday"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:scrollbars="vertical" />
+                        android:scrollbars="vertical">
+
+                    </androidx.recyclerview.widget.RecyclerView>
+
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/tab2"
+                    android:id="@+id/weekdaytab2"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
@@ -63,7 +73,7 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/tab3"
+                    android:id="@+id/weekdaytab3"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
@@ -76,7 +86,7 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/tab4"
+                    android:id="@+id/weekdaytab4"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
@@ -89,7 +99,7 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/tab5"
+                    android:id="@+id/weekdaytab5"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
@@ -102,7 +112,7 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/tab6"
+                    android:id="@+id/weekdaytab6"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
@@ -115,7 +125,7 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/tab7"
+                    android:id="@+id/weekdaytab7"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
@@ -129,6 +139,9 @@
 
 
             </FrameLayout>
+
         </LinearLayout>
+
     </TabHost>
+
 </LinearLayout>

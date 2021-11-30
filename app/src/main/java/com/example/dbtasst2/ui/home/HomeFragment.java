@@ -56,7 +56,16 @@ public class HomeFragment extends Fragment
         setupDayTabs(tabHostWeek);
 
 
+        binding.fabNewEntry.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
 
+                //new NewEntryFragment().show(getChildFragmentManager(), "splashFragment");
+
+            }
+        });
 
 
 

@@ -48,7 +48,19 @@ public class Entry
 
 
 
+    public String getScoresAsString()
+    {
+        String strOut = "";
 
+        for (int i = 0; i < items.size(); i++)
+        {
+            strOut += items.get(i).getValue() + "/";
+        }
+
+
+
+        return strOut;
+    }
 
     public List<EntryItem> getItems()
     {

@@ -69,13 +69,7 @@ public class EntryAdapter extends RecyclerView.Adapter<EntryAdapter.ViewHolder>
 
 
         //each entry item
-        List<EntryItem> entryItems = entryList.get(pos).getItems();
-
-        String entryVals = "";
-        for(EntryItem ei : entryItems)
-        {
-            entryVals += ei.getValue() + "/";
-        }
+        String entryVals = entryList.get(pos).getScoresAsString();
 
         holder.txtEntryValues.setText(entryVals);
 
