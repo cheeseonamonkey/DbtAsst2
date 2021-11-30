@@ -41,7 +41,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="TextView" />
+                            android:text="Kill myself" />
 
                         <Spinner
                             android:id="@+id/spnKms"
@@ -64,7 +64,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="TextView" />
+                            android:text="Hurt myself" />
 
                         <Spinner
                             android:id="@+id/spnQuitTherapy"
@@ -85,7 +85,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="TextView" />
+                            android:text="Quit therapy" />
 
                         <Spinner
                             android:id="@+id/spnUseDrugs"
@@ -106,7 +106,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="TextView" />
+                            android:text="Use alcohol/drugs" />
 
                         <Spinner
                             android:id="@+id/spnHms"
@@ -143,7 +143,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="TextView" />
+                            android:text="Emotional misery" />
 
                         <Spinner
                             android:id="@+id/spnEmotionalMisery"
@@ -164,7 +164,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="TextView" />
+                            android:text="Physical misery" />
 
                         <Spinner
                             android:id="@+id/spnPhysicalMisery"
@@ -199,7 +199,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="TextView" />
+                            android:text="Happiness/joy" />
 
                         <Spinner
                             android:id="@+id/spnAnger"
@@ -220,7 +220,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="TextView" />
+                            android:text="Anger" />
 
                         <Spinner
                             android:id="@+id/spnWorry"
@@ -241,7 +241,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="TextView" />
+                            android:text="Shame" />
 
                         <Spinner
                             android:id="@+id/spnShame"
@@ -262,7 +262,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="TextView" />
+                            android:text="Worry" />
 
                         <Spinner
                             android:id="@+id/spnSadness"
@@ -283,7 +283,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="TextView" />
+                            android:text="Sadness" />
 
                         <Spinner
                             android:id="@+id/spnHappiness"
@@ -319,7 +319,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="TextView" />
+                            android:text="Self-harm" />
 
                         <Spinner
                             android:id="@+id/spnSelfHarm"
@@ -339,7 +339,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="TextView" />
+                            android:text="Self-validation" />
 
                         <Spinner
                             android:id="@+id/spnAttempts"
@@ -359,7 +359,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="TextView" />
+                            android:text="Attempts" />
 
                         <Spinner
                             android:id="@+id/spnSelfValidation"
