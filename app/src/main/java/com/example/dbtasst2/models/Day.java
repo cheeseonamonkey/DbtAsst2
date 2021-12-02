@@ -23,7 +23,7 @@ public class Day
 
     public Day(LocalDate date)
     {
-        date = date;
+        this.date = date;
         dayOfWeek = date.getDayOfWeek();
 
 

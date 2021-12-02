@@ -16,7 +16,6 @@ public class Diary
     public Diary()
     {
         setDefaults();
-
     }
 
     public Week getCurrentWeek()

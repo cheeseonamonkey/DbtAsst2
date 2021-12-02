@@ -27,6 +27,9 @@ public class Week
     boolean enteredDuringSession;
 
 
+    //YOUR ARE HERE
+        //days starting from ld.now() rather than corresponding days of week lol
+
     public Week()
     {
         //make days
@@ -59,6 +62,26 @@ public class Week
     {
         return days;
     }
+
+
+    public Day getToday()
+    {
+
+
+        for (Day d : days)
+        {
+            LocalDate ldnow = LocalDate.now();
+
+            if (d.date.equals(LocalDate.now()))
+                return d;
+        }
+
+        throw new NullPointerException("Day not found");
+    }
+
+
+
+
 
     public void SetDefaults()
     {

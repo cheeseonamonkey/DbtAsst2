@@ -163,7 +163,7 @@ public EntryItem()
     enum Type
     { YESNO, RATING }
 
-    enum Section
+    public enum Section
     {
         HIGHEST_URGE_TO("Highest Urge To"),
         HIGHEST_RATING("Highest Rating"),

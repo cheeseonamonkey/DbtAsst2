@@ -6,6 +6,11 @@
     android:orientation="vertical"
     tools:context=".ui.newEntry.NewEntryFragment">
 
+    <Spinner
+        android:id="@+id/spnReason"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
     <TabHost
         android:id="@+id/tabHostNewEntry"
         android:layout_width="match_parent"
@@ -50,6 +55,7 @@
                             android:entries="@array/oneToFive"
                             android:minWidth="50dp"
                             android:minHeight="50dp"
+                            android:spinnerMode="dialog"
                             android:textAlignment="textEnd"
                             tools:ignore="DuplicateSpeakableTextCheck" />
 
@@ -73,6 +79,7 @@
                             android:entries="@array/oneToFive"
                             android:minWidth="50dp"
                             android:minHeight="50dp"
+                            android:spinnerMode="dialog"
                             android:textAlignment="textEnd" />
                     </LinearLayout>
 
@@ -94,6 +101,7 @@
                             android:entries="@array/oneToFive"
                             android:minWidth="50dp"
                             android:minHeight="50dp"
+                            android:spinnerMode="dialog"
                             android:textAlignment="textEnd" />
                     </LinearLayout>
 
@@ -115,11 +123,12 @@
                             android:entries="@array/oneToFive"
                             android:minWidth="50dp"
                             android:minHeight="50dp"
+                            android:spinnerMode="dialog"
                             android:textAlignment="textEnd" />
                     </LinearLayout>
 
                     <Button
-                        android:id="@+id/button2"
+                        android:id="@+id/btnNewEntryNext1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Next" />
@@ -152,6 +161,7 @@
                             android:entries="@array/oneToFive"
                             android:minWidth="50dp"
                             android:minHeight="50dp"
+                            android:spinnerMode="dialog"
                             android:textAlignment="textEnd" />
                     </LinearLayout>
 
@@ -173,11 +183,12 @@
                             android:entries="@array/oneToFive"
                             android:minWidth="50dp"
                             android:minHeight="50dp"
+                            android:spinnerMode="dialog"
                             android:textAlignment="textEnd" />
                     </LinearLayout>
 
                     <Button
-                        android:id="@+id/button3"
+                        android:id="@+id/btnNewEntryNext2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Next" />
@@ -208,6 +219,7 @@
                             android:entries="@array/oneToFive"
                             android:minWidth="50dp"
                             android:minHeight="50dp"
+                            android:spinnerMode="dialog"
                             android:textAlignment="textEnd" />
                     </LinearLayout>
 
@@ -229,6 +241,7 @@
                             android:entries="@array/oneToFive"
                             android:minWidth="50dp"
                             android:minHeight="50dp"
+                            android:spinnerMode="dialog"
                             android:textAlignment="textEnd" />
                     </LinearLayout>
 
@@ -250,6 +263,7 @@
                             android:entries="@array/oneToFive"
                             android:minWidth="50dp"
                             android:minHeight="50dp"
+                            android:spinnerMode="dialog"
                             android:textAlignment="textEnd" />
                     </LinearLayout>
 
@@ -271,6 +285,7 @@
                             android:entries="@array/oneToFive"
                             android:minWidth="50dp"
                             android:minHeight="50dp"
+                            android:spinnerMode="dialog"
                             android:textAlignment="textEnd" />
                     </LinearLayout>
 
@@ -292,11 +307,12 @@
                             android:entries="@array/oneToFive"
                             android:minWidth="50dp"
                             android:minHeight="50dp"
+                            android:spinnerMode="dialog"
                             android:textAlignment="textEnd" />
                     </LinearLayout>
 
                     <Button
-                        android:id="@+id/button4"
+                        android:id="@+id/btnNewEntryNext3"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Next" />
@@ -327,6 +343,7 @@
                             android:layout_height="wrap_content"
                             android:minWidth="50dp"
                             android:minHeight="50dp"
+                            android:spinnerMode="dialog"
                             android:textAlignment="textEnd" />
                     </LinearLayout>
 
@@ -347,6 +364,7 @@
                             android:layout_height="wrap_content"
                             android:minWidth="50dp"
                             android:minHeight="50dp"
+                            android:spinnerMode="dialog"
                             android:textAlignment="textEnd" />
                     </LinearLayout>
 
@@ -367,11 +385,12 @@
                             android:layout_height="wrap_content"
                             android:minWidth="50dp"
                             android:minHeight="50dp"
-                            android:textAlignment="textEnd" />
+                            android:textAlignment="textEnd"
+                            android:spinnerMode="dialog" />
                     </LinearLayout>
 
                     <Button
-                        android:id="@+id/button5"
+                        android:id="@+id/btnNewEntryOkay"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Okay" />
