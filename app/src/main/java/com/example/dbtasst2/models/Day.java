@@ -16,6 +16,8 @@ public class Day
 
     LocalDate date;
 
+    Week parentWeek;
+
 
 
     //boolean startDay;
@@ -36,6 +38,10 @@ public class Day
     }
 
 
+    public LocalDate getDate()
+    {
+        return date;
+    }
 
     public Entry addEntry(Entry.Reason reason)
     {
@@ -43,6 +49,8 @@ public class Day
         entries.add(entOut);
 
         MainActivity.log.log("Adding entry: " + entOut.reason.toString(), "Entry");
+
+
 
         return entOut;
     }

@@ -2,7 +2,10 @@ package com.example.dbtasst2.models;
 
 
 
+import java.time.DayOfWeek;
 import java.time.LocalDate;
+import java.time.temporal.TemporalAdjuster;
+import java.time.temporal.TemporalAdjusters;
 import java.time.temporal.TemporalUnit;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -27,13 +30,12 @@ public class Week
     boolean enteredDuringSession;
 
 
-    //YOUR ARE HERE
-        //days starting from ld.now() rather than corresponding days of week lol
+
 
     public Week()
     {
         //make days
-        weekStartDate = LocalDate.now();
+        weekStartDate = LocalDate.now().with(TemporalAdjusters.previousOrSame(DayOfWeek.MONDAY));
         weekEndDate = weekStartDate.plusDays(7);
 
         days = new ArrayList<>();
@@ -64,6 +66,7 @@ public class Week
     }
 
 
+
     public Day getToday()
     {
 
@@ -80,8 +83,15 @@ public class Week
     }
 
 
+    public LocalDate getWeekStartDate()
+    {
+        return weekStartDate;
+    }
 
-
+    public LocalDate getWeekEndDate()
+    {
+        return weekEndDate;
+    }
 
     public void SetDefaults()
     {

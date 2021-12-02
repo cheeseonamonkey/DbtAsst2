@@ -18,9 +18,13 @@ public class MainActivity extends AppCompatActivity
 
     private ActivityMainBinding binding;
 
-    public static Diary diary = new Diary();
+
 
     public static MyLogger log = new MyLogger();
+
+    public static Global global = new Global();
+
+    public static Diary diary = new Diary();
 
 
     @Override

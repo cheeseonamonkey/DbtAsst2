@@ -15,17 +15,34 @@ public class Diary
 
     public Diary()
     {
-        setDefaults();
+
+       // setDefaults();
+
+        initDiary();
+
+
     }
 
     public Week getCurrentWeek()
     {
         return weeks.get(weeks.size() - 1);
-
     }
 
+    public List<Week> getWeeks()
+    {
+        return weeks;
+    }
 
+    public void initDiary()
+    {
 
+        if(weeks.size() == 0)
+        {
+            weeks.add(new Week());
+        }
+
+        MainActivity.global.selectedWeek = getCurrentWeek();
+    }
 
     public void setDefaults()
     {
