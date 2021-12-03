@@ -3,22 +3,18 @@ package com.example.dbtasst2.ui.newEntry;
 import androidx.fragment.app.DialogFragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import android.app.Dialog;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.LinearLayout;
 import android.widget.TabHost;
 
 import com.example.dbtasst2.MainActivity;
-import com.example.dbtasst2.R;
 import com.example.dbtasst2.databinding.NewEntryFragmentBinding;
 import com.example.dbtasst2.models.Entry;
 import com.example.dbtasst2.models.EntryItem;
@@ -156,7 +152,11 @@ public class NewEntryFragment extends DialogFragment
                         .addItem("Happiness", happy, EntryItem.Section.EMOTIONS);
 
                         //todo: custom and bool
+                        //=======================================================================
+                        //=======================================================================
 
+
+                MainActivity.diary.saveDiary(getActivity());
 
 
             }

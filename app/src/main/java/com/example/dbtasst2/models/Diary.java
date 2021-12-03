@@ -1,6 +1,11 @@
 package com.example.dbtasst2.models;
 
+import android.app.Activity;
+import android.content.Context;
+import android.content.SharedPreferences;
+
 import com.example.dbtasst2.MainActivity;
+import com.google.gson.Gson;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,16 +14,18 @@ public class Diary
 {
     List<Week> weeks = new ArrayList<>();
 
+
+
     //settings
     //reminders
     //colors
 
-    public Diary()
+    public Diary(Activity activity)
     {
 
        // setDefaults();
 
-        initDiary();
+        initDiary(activity);
 
 
     }
@@ -33,14 +40,16 @@ public class Diary
         return weeks;
     }
 
-    public void initDiary()
+    public void initDiary(Activity activity)
     {
-
+/*
         if(weeks.size() == 0)
         {
             weeks.add(new Week());
         }
 
+ */
+        loadDiary(activity);
         MainActivity.global.selectedWeek = getCurrentWeek();
     }
 
@@ -48,6 +57,31 @@ public class Diary
     {
         weeks.add(new Week());
     }
+
+    public String toJson()
+    {
+        Gson gson = new Gson();
+        return gson.toJson(this);
+    }
+
+    public void saveDiary(Activity activity)
+    {
+        SharedPreferences sharePrefs = activity.getPreferences(Context.MODE_PRIVATE);
+        SharedPreferences.Editor prefEditor = sharePrefs.edit();
+
+        prefEditor.putString("diary", MainActivity.diary.toJson());
+        prefEditor.apply();
+    }
+
+    public void loadDiary(Activity activity)
+    {
+        SharedPreferences sharedPrefs = activity.getPreferences(Context.MODE_PRIVATE);
+
+        String diaryJson = sharedPrefs.getString("diary","{\"weeks\":[{\"days\":[{\"date\":{},\"dayOfWeek\":\"MONDAY\",\"entries\":[]},{\"date\":{},\"dayOfWeek\":\"TUESDAY\",\"entries\":[]},{\"date\":{},\"dayOfWeek\":\"WEDNESDAY\",\"entries\":[]},{\"date\":{},\"dayOfWeek\":\"THURSDAY\",\"entries\":[]},{\"date\":{},\"dayOfWeek\":\"FRIDAY\",\"entries\":[]},{\"date\":{},\"dayOfWeek\":\"SATURDAY\",\"entries\":[]},{\"date\":{},\"dayOfWeek\":\"SUNDAY\",\"entries\":[]}],\"enteredDuringSession\":false,\"entryFrequency\":0,\"weekEndDate\":{},\"weekNum\":0,\"weekStartDate\":{}}]}");
+        MainActivity.log.log(diaryJson,"load");
+    }
+
+
 
     public void setSampleData()
     {

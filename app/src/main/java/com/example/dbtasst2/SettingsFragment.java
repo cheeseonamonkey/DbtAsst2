@@ -2,6 +2,8 @@ package com.example.dbtasst2;
 
 import androidx.lifecycle.ViewModelProvider;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -14,6 +16,7 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.example.dbtasst2.databinding.SettingsFragmentBinding;
+import com.google.gson.Gson;
 
 public class SettingsFragment extends Fragment
 {
@@ -54,6 +57,15 @@ public class SettingsFragment extends Fragment
             }
         });
 
+
+        binding.btnLoad.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+
+            }
+        });
 //=========
 
 

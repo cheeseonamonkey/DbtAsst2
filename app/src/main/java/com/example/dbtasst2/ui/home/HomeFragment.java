@@ -47,19 +47,31 @@ public class HomeFragment extends Fragment
         //set up tab list
         for (int i = 0; i < binding.tabcontent.getChildCount(); i++)
         {
-            tabList.add((LinearLayout) binding.tabcontent.getChildAt(i));
+            tabList.add( (LinearLayout) binding.tabcontent.getChildAt(i));
           //  MainActivity.log.log(binding.tabcontent.getChildAt(i).toString());
         }
 
 
 
-//=======================================================================
-        //listeners:
+        binding.txtWeekDateMonday.setText(MainActivity.global.selectedWeek.getDays().get(0).getDate().toString());
+        binding.txtWeekDateTuesday.setText(MainActivity.global.selectedWeek.getDays().get(1).getDate().toString());
+        binding.txtWeekDateWednesday.setText(MainActivity.global.selectedWeek.getDays().get(2).getDate().toString());
+        binding.txtWeekDateThursday.setText(MainActivity.global.selectedWeek.getDays().get(3).getDate().toString());
+        binding.txtWeekDateFriday.setText(MainActivity.global.selectedWeek.getDays().get(4).getDate().toString());
+        binding.txtWeekDateSaturday.setText(MainActivity.global.selectedWeek.getDays().get(5).getDate().toString());
+        binding.txtWeekDateSunday.setText(MainActivity.global.selectedWeek.getDays().get(6).getDate().toString());
+
 
         //tab host week
         TabHost tabHostWeek = binding.tabHostWeek;
 
         setupDayTabs(tabHostWeek);
+
+
+//=======================================================================
+        //listeners:
+
+
 
 
         //fab new entry
@@ -110,30 +122,25 @@ public class HomeFragment extends Fragment
         ArrayAdapter<String> weekSelectionsAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_dropdown_item, weekSelections);
         binding.spnWeekSelection.setAdapter(weekSelectionsAdapter);
 
-        binding.txtWeekDateMonday.setText(MainActivity.global.selectedWeek.getDays().get(0).getDate().toString());
-        binding.txtWeekDateTuesday.setText(MainActivity.global.selectedWeek.getDays().get(1).getDate().toString());
-        binding.txtWeekDateWednesday.setText(MainActivity.global.selectedWeek.getDays().get(2).getDate().toString());
-        binding.txtWeekDateThursday.setText(MainActivity.global.selectedWeek.getDays().get(3).getDate().toString());
-        binding.txtWeekDateFriday.setText(MainActivity.global.selectedWeek.getDays().get(4).getDate().toString());
-        binding.txtWeekDateSaturday.setText(MainActivity.global.selectedWeek.getDays().get(5).getDate().toString());
-        binding.txtWeekDateSunday.setText(MainActivity.global.selectedWeek.getDays().get(6).getDate().toString());
 
 
-        binding.recycEntriesSunday.setLayoutManager(new LinearLayoutManager(getContext()));
+
+
         binding.recycEntriesMonday.setLayoutManager(new LinearLayoutManager(getContext()));
         binding.recycEntriesTuesday.setLayoutManager(new LinearLayoutManager(getContext()));
         binding.recycEntriesWednesday.setLayoutManager(new LinearLayoutManager(getContext()));
         binding.recycEntriesThursday.setLayoutManager(new LinearLayoutManager(getContext()));
         binding.recycEntriesFriday.setLayoutManager(new LinearLayoutManager(getContext()));
         binding.recycEntriesSaturday.setLayoutManager(new LinearLayoutManager(getContext()));
+        binding.recycEntriesSunday.setLayoutManager(new LinearLayoutManager(getContext()));
         //=======================================================================
-        binding.recycEntriesSunday.setAdapter(new EntryAdapter(MainActivity.global.selectedWeek.getDays().get(0).getEntries(), getContext()));
-        binding.recycEntriesMonday.setAdapter(new EntryAdapter(MainActivity.global.selectedWeek.getDays().get(1).getEntries(), getContext()));
-        binding.recycEntriesTuesday.setAdapter(new EntryAdapter(MainActivity.global.selectedWeek.getDays().get(2).getEntries(), getContext()));
-        binding.recycEntriesWednesday.setAdapter(new EntryAdapter(MainActivity.global.selectedWeek.getDays().get(3).getEntries(), getContext()));
-        binding.recycEntriesThursday.setAdapter(new EntryAdapter(MainActivity.global.selectedWeek.getDays().get(4).getEntries(), getContext()));
-        binding.recycEntriesFriday.setAdapter(new EntryAdapter(MainActivity.global.selectedWeek.getDays().get(5).getEntries(), getContext()));
-        binding.recycEntriesSaturday.setAdapter(new EntryAdapter(MainActivity.global.selectedWeek.getDays().get(6).getEntries(), getContext()));
+        binding.recycEntriesMonday.setAdapter(new EntryAdapter(MainActivity.global.selectedWeek.getDays().get(0).getEntries(), getContext()));
+        binding.recycEntriesTuesday.setAdapter(new EntryAdapter(MainActivity.global.selectedWeek.getDays().get(1).getEntries(), getContext()));
+        binding.recycEntriesWednesday.setAdapter(new EntryAdapter(MainActivity.global.selectedWeek.getDays().get(2).getEntries(), getContext()));
+        binding.recycEntriesThursday.setAdapter(new EntryAdapter(MainActivity.global.selectedWeek.getDays().get(3).getEntries(), getContext()));
+        binding.recycEntriesFriday.setAdapter(new EntryAdapter(MainActivity.global.selectedWeek.getDays().get(4).getEntries(), getContext()));
+        binding.recycEntriesSaturday.setAdapter(new EntryAdapter(MainActivity.global.selectedWeek.getDays().get(5).getEntries(), getContext()));
+        binding.recycEntriesSunday.setAdapter(new EntryAdapter(MainActivity.global.selectedWeek.getDays().get(6).getEntries(), getContext()));
 
 
 

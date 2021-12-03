@@ -1,5 +1,7 @@
 package com.example.dbtasst2;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import com.example.dbtasst2.models.Diary;
@@ -24,6 +26,8 @@ public class MainActivity extends AppCompatActivity
 
     public static Global global = new Global();
 
+    //you are here
+    //long call stack
     public static Diary diary = new Diary();
 
 
@@ -48,6 +52,16 @@ public class MainActivity extends AppCompatActivity
 
 
 
+    }
+
+
+    public void SaveDiary()
+    {
+        SharedPreferences sharePrefs = getPreferences(Context.MODE_PRIVATE);
+        SharedPreferences.Editor prefEditor = sharePrefs.edit();
+
+        prefEditor.putString("diary", MainActivity.diary.toJson());
+        prefEditor.apply();
     }
 
 }
