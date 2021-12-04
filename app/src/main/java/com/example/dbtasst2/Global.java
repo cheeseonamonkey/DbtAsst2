@@ -11,4 +11,7 @@ public class Global
 
     public Week selectedWeek;
 
+
+    public Object debugObj;
+
 }

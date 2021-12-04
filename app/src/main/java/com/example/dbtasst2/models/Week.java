@@ -2,6 +2,8 @@ package com.example.dbtasst2.models;
 
 
 
+import com.example.dbtasst2.MainActivity;
+
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.temporal.TemporalAdjuster;
@@ -11,6 +13,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 public class Week
 {
@@ -35,7 +38,7 @@ public class Week
     public Week()
     {
         //make days
-        weekStartDate = LocalDate.now().with(TemporalAdjusters.previousOrSame(DayOfWeek.MONDAY));
+        weekStartDate = LocalDate.now().with(TemporalAdjusters.previousOrSame(DayOfWeek.SUNDAY));
         weekEndDate = weekStartDate.plusDays(7);
 
         days = new ArrayList<>();
@@ -66,18 +69,90 @@ public class Week
     }
 
 
-
-    public Day getToday()
+    public Day getDay(String dayOfWeek)
     {
+        switch(dayOfWeek.toLowerCase().toLowerCase(Locale.ROOT)) {
 
+            //no breaks for returns! lol
+
+            case "sunday":
+            case "sun":
+                for(Day d : days)
+                {
+                    if(d.getDate().getDayOfWeek().equals(DayOfWeek.SUNDAY))
+                        return d;
+                }
+
+            case "monday":
+            case "mon":
+                for(Day d : days)
+                {
+                    if(d.getDate().getDayOfWeek().equals(DayOfWeek.MONDAY))
+                        return d;
+                }
+
+            case "tuesday":
+            case "tue":
+                for(Day d : days)
+                {
+                    if(d.getDate().getDayOfWeek().equals(DayOfWeek.TUESDAY))
+                        return d;
+                }
+
+            case "wednesday":
+            case "wed":
+                for(Day d : days)
+                {
+                    if(d.getDate().getDayOfWeek().equals(DayOfWeek.WEDNESDAY))
+                        return d;
+                }
+
+            case "thursday":
+            case "thu":
+                for(Day d : days)
+                {
+                    if(d.getDate().getDayOfWeek().equals(DayOfWeek.THURSDAY))
+                        return d;
+                }
+
+            case "friday":
+            case "fri":
+                for(Day d : days)
+                {
+                    if(d.getDate().getDayOfWeek().equals(DayOfWeek.FRIDAY))
+                        return d;
+                }
+
+            case "saturday":
+            case "sat":
+                for(Day d : days)
+                {
+                    if(d.getDate().getDayOfWeek().equals(DayOfWeek.SATURDAY))
+                        return d;
+                }
+
+            default:
+                throw new NullPointerException("Day: " + dayOfWeek + " - not found");
+        }
+
+    }
+
+    public Day getToday() //checked
+    {
 
         for (Day d : days)
         {
             LocalDate ldnow = LocalDate.now();
 
-            if (d.date.equals(LocalDate.now()))
+            if (d.date.getDayOfWeek().equals(LocalDate.now().getDayOfWeek()))
+            {
+                //checked
                 return d;
+
+            }
         }
+
+
 
         throw new NullPointerException("Day not found");
     }

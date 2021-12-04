@@ -20,12 +20,12 @@ public class Diary
     //reminders
     //colors
 
-    public Diary(Activity activity)
+    public Diary()
     {
 
        // setDefaults();
 
-        initDiary(activity);
+        initDiary();
 
 
     }
@@ -40,16 +40,16 @@ public class Diary
         return weeks;
     }
 
-    public void initDiary(Activity activity)
+    public void initDiary()
     {
-/*
+
         if(weeks.size() == 0)
         {
             weeks.add(new Week());
         }
 
- */
-        loadDiary(activity);
+
+
         MainActivity.global.selectedWeek = getCurrentWeek();
     }
 
@@ -64,6 +64,7 @@ public class Diary
         return gson.toJson(this);
     }
 
+/*
     public void saveDiary(Activity activity)
     {
         SharedPreferences sharePrefs = activity.getPreferences(Context.MODE_PRIVATE);
@@ -73,7 +74,7 @@ public class Diary
         prefEditor.apply();
     }
 
-    public void loadDiary(Activity activity)
+    public void loadDiary()
     {
         SharedPreferences sharedPrefs = activity.getPreferences(Context.MODE_PRIVATE);
 
@@ -81,11 +82,13 @@ public class Diary
         MainActivity.log.log(diaryJson,"load");
     }
 
+ */
+
 
 
     public void setSampleData()
     {
-        this.getCurrentWeek().days.get(0)
+        this.getCurrentWeek().getToday()
                 .addEntry(Entry.Reason.MORNING)
                 .addItem("MURDER", 3, EntryItem.Section.HIGHEST_URGE_TO)
                 .addItem("DEATH", 1, EntryItem.Section.HIGHEST_RATING)
@@ -95,7 +98,7 @@ public class Diary
                 .addItem("DEATH", false, EntryItem.Section.HIGHEST_RATING)
                 .addItem("DEATH", false, EntryItem.Section.HIGHEST_RATING);
 
-        this.getCurrentWeek().days.get(0)
+        this.getCurrentWeek().getToday()
                 .addEntry(Entry.Reason.MIDDAY)
                 .addItem("MURDER", 1, EntryItem.Section.HIGHEST_URGE_TO)
                 .addItem("DEATH", 2, EntryItem.Section.HIGHEST_RATING)
@@ -105,7 +108,7 @@ public class Diary
                 .addItem("DEATH", true, EntryItem.Section.HIGHEST_RATING)
                 .addItem("DEATH", true, EntryItem.Section.HIGHEST_RATING);
 
-        this.getCurrentWeek().days.get(0)
+        this.getCurrentWeek().getToday()
                 .addEntry(Entry.Reason.EVENING)
                 .addItem("MURDER", 1, EntryItem.Section.HIGHEST_URGE_TO)
                 .addItem("DEATH", 0, EntryItem.Section.HIGHEST_RATING)

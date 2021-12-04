@@ -40,7 +40,8 @@
             <FrameLayout
                 android:id="@android:id/tabcontent"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:padding="2dp">
 
 
                 <LinearLayout
@@ -50,7 +51,7 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/txtWeekDateMonday"
+                        android:id="@+id/txtWeekDateSunday"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Date"
@@ -75,7 +76,7 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/txtWeekDateTuesday"
+                        android:id="@+id/txtWeekDateMon"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Date"
@@ -97,7 +98,7 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/txtWeekDateWednesday"
+                        android:id="@+id/txtWeekDateTue"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Date"
@@ -119,7 +120,7 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/txtWeekDateThursday"
+                        android:id="@+id/txtWeekDateWed"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Date"
@@ -141,7 +142,7 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/txtWeekDateFriday"
+                        android:id="@+id/txtWeekDateThu"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Date"
@@ -163,7 +164,7 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/txtWeekDateSaturday"
+                        android:id="@+id/txtWeekDateFri"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Date"
@@ -185,7 +186,7 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/txtWeekDateSunday"
+                        android:id="@+id/txtWeekDateSat"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Date"

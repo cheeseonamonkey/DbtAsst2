@@ -156,7 +156,8 @@ public class NewEntryFragment extends DialogFragment
                         //=======================================================================
 
 
-                MainActivity.diary.saveDiary(getActivity());
+
+               // MainActivity.log.log("creating entry on " + MainActivity.diary.getCurrentWeek().getToday().getDate().toString(), "entry");
 
 
             }

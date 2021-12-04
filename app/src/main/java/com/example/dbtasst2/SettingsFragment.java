@@ -58,14 +58,6 @@ public class SettingsFragment extends Fragment
         });
 
 
-        binding.btnLoad.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View view)
-            {
-
-            }
-        });
 //=========
 
 
