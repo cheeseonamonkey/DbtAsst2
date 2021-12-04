@@ -100,6 +100,8 @@ public class NewEntryFragment extends DialogFragment
             @Override
             public void onClick(View view)
             {
+
+
                 Entry.Reason reason;
 
                 String strReason = binding.spnReason.getSelectedItem().toString();
@@ -159,6 +161,10 @@ public class NewEntryFragment extends DialogFragment
 
                // MainActivity.log.log("creating entry on " + MainActivity.diary.getCurrentWeek().getToday().getDate().toString(), "entry");
 
+
+
+                //close the dialog
+                dismiss();
 
             }
         });

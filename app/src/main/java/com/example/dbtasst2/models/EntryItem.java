@@ -160,7 +160,7 @@ public EntryItem()
 
     }
 
-    enum Type
+    public enum Type
     { YESNO, RATING }
 
     public enum Section

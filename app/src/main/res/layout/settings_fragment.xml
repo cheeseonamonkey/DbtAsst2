@@ -13,6 +13,12 @@
         android:text="Sample data" />
 
     <Button
+        android:id="@+id/btnSetEntriesSettings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Entry settings" />
+
+    <Button
         android:id="@+id/btnLoad"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

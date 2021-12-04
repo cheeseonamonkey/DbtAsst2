@@ -14,7 +14,7 @@ public class Diary
 {
     List<Week> weeks = new ArrayList<>();
 
-
+    List<EntrySetting> entrySettings = new ArrayList<>();
 
     //settings
     //reminders
@@ -28,6 +28,16 @@ public class Diary
         initDiary();
 
 
+    }
+
+    public List<EntrySetting> getEntrySettings()
+    {
+        return entrySettings;
+    }
+
+    public void setEntrySettings(List<EntrySetting> entrySettings)
+    {
+        this.entrySettings = entrySettings;
     }
 
     public Week getCurrentWeek()
@@ -48,14 +58,18 @@ public class Diary
             weeks.add(new Week());
         }
 
-
+        if(entrySettings.size() == 0)
+        {
+            entrySettings.add(new EntrySetting("Self-harm", EntryItem.Type.YESNO));
+            entrySettings.add(new EntrySetting("Self-validation", EntryItem.Type.YESNO));
+        }
 
         MainActivity.global.selectedWeek = getCurrentWeek();
     }
 
     public void setDefaults()
     {
-        weeks.add(new Week());
+
     }
 
     public String toJson()
