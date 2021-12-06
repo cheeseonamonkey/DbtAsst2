@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:padding="1dp"
+    android:paddingHorizontal="2dp">
+
+    <EditText
+        android:id="@+id/txtEntrySettingName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        tools:text="Name" />
+
+    <RadioGroup
+        android:id="@+id/rdbGrpEntrySettingsTypeGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="6dp"
+        android:gravity="center_vertical|end"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rdbEntrySettingYesNo"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:text="0-5"
+            android:textSize="16sp" />
+
+        <RadioButton
+            android:id="@+id/rdbEntrySettingNumericalRating"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:text="Yes/No"
+            android:textSize="16sp" />
+
+    </RadioGroup>
+
+    <ImageButton
+        android:id="@+id/btnEntrySettingDelete"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_margin="5dp"
+        android:background="#59989898"
+        android:padding="2dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/trashicon"
+        tools:ignore="SpeakableTextPresentCheck" />
+</LinearLayout>

@@ -25,9 +25,13 @@ public class EntryAdapter extends RecyclerView.Adapter<EntryAdapter.ViewHolder>
 
     public EntryAdapter(List entryList, Context context)
     {
-        this.entryList = entryList;
 
         entryList = new ArrayList<>();
+
+        
+        this.entryList = entryList;
+
+
 
         context = context;
 
