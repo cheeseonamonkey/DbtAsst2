@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ui.EntrySettings.EntrySettingsDialogFragment" >
+    android:padding="6dp"
+    tools:context=".ui.EntrySettings.EntrySettingsDialogFragment">
 
     <TextView
         android:id="@+id/textView"
@@ -21,4 +22,31 @@
         android:id="@+id/recycEntrySettings"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:gravity="right"
+        android:orientation="horizontal"
+        android:paddingHorizontal="1dp">
+
+        <ImageButton
+            android:id="@+id/btnNewEntrySettings"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="right"
+            android:layout_margin="4dp"
+            android:background="#59989898"
+            android:padding="2dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/plusicon"
+            tools:ignore="SpeakableTextPresentCheck" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnEntrySettingsAccept"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Accept" />
 </LinearLayout>

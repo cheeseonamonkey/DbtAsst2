@@ -25,12 +25,15 @@ public class EntrySettingsAdapter extends RecyclerView.Adapter<EntrySettingsAdap
 {
 
     List<EntrySetting> entrySettingList;
+    List<ViewHolder> holders;
     Context context;
 
     public EntrySettingsAdapter(List<EntrySetting> entrySettingList, Context context)
     {
         this.entrySettingList = entrySettingList;
         this.context = context;
+
+        holders = new ArrayList<>();
     }
 
 
@@ -44,7 +47,7 @@ public class EntrySettingsAdapter extends RecyclerView.Adapter<EntrySettingsAdap
         //turns it to the ViewHolder class we defined at the bottom
         ViewHolder viewHolder = new ViewHolder(listItemView);
 
-
+        holders.add(viewHolder);
 
         return viewHolder;
     }
@@ -63,14 +66,15 @@ public class EntrySettingsAdapter extends RecyclerView.Adapter<EntrySettingsAdap
 
         holder.txtEntrySettingName.setText(setting.getName());
 
-        if(setting.getType().equals(EntryItem.Type.RATING))
+
+        if(setting.getType().toString() == EntryItem.Type.RATING.toString())
         {
-            holder.rdbRating.setChecked(true);
-            holder.rdbYesNo.setChecked(false);
-        }else if(setting.getType().equals(EntryItem.Type.YESNO))
+            holder.rdbGrpType.clearCheck();
+            holder.rdbGrpType.check(R.id.rdbEntrySettingNumericalRating);
+        }else if(setting.getType().toString() == EntryItem.Type.YESNO.toString())
         {
-            holder.rdbRating.setChecked(false);
-            holder.rdbYesNo.setChecked(true);
+            holder.rdbGrpType.clearCheck();
+            holder.rdbGrpType.check(R.id.rdbEntrySettingYesNo);
         }
 
 
@@ -86,7 +90,16 @@ public class EntrySettingsAdapter extends RecyclerView.Adapter<EntrySettingsAdap
 
     public List<EntrySetting> getEntrySettings()
     {
-        return new ArrayList<>();
+        List<EntrySetting> entrySettings = new ArrayList<>();
+
+        int count = this.getItemCount();
+
+        for (int i = 0; i < count - 1; i++)
+        {
+            entrySettings.add(holders.get(i).getNewEntrySetting());
+        }
+
+        return entrySettings;
     }
 
 
@@ -102,10 +115,24 @@ public class EntrySettingsAdapter extends RecyclerView.Adapter<EntrySettingsAdap
         ImageButton btnDelete;
 
 
+        public EntrySetting getNewEntrySetting()
+        {
+            String name = txtEntrySettingName.getText().toString();
+
+            EntryItem.Type type = EntryItem.Type.RATING;
+
+            if(rdbYesNo.isChecked())
+                type = EntryItem.Type.YESNO;
+            else if(rdbRating.isChecked())
+                type = EntryItem.Type.RATING;
+
+            return new EntrySetting(name, type);
+        }
 
         public ViewHolder(@NonNull View view)
         {
             super(view);
+
 
 
             this.setIsRecyclable(false);
@@ -120,7 +147,14 @@ public class EntrySettingsAdapter extends RecyclerView.Adapter<EntrySettingsAdap
 
 
             //listeners:
+            btnDelete.setOnClickListener(new View.OnClickListener()
+            {
+                @Override
+                public void onClick(View view)
+                {
 
+                }
+            });
 
 
         }
