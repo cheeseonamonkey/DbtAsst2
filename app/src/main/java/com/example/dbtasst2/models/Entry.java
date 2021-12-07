@@ -46,6 +46,15 @@ public class Entry
         return this;
     }
 
+    public Entry addItems(List<EntryItem> items)
+    {
+        this.items.addAll(items);
+
+        MainActivity.log.log("Adding items to entry " + this.reason.toString() + ": (list)");
+
+        return this;
+    }
+
 
 
     public String getScoresAsString()
@@ -87,8 +96,11 @@ public class Entry
         CUSTOM
     }
 
-
-
-
-
+    @Override
+    public String toString()
+    {
+        return "Entry{" +
+                "items=" + items +
+                '}';
+    }
 }

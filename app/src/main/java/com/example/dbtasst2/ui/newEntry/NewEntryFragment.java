@@ -7,6 +7,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,6 +19,8 @@ import com.example.dbtasst2.MainActivity;
 import com.example.dbtasst2.databinding.NewEntryFragmentBinding;
 import com.example.dbtasst2.models.Entry;
 import com.example.dbtasst2.models.EntryItem;
+import com.example.dbtasst2.models.EntrySetting;
+import com.example.dbtasst2.ui.adapters.NewEntryItemsAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,6 +32,8 @@ public class NewEntryFragment extends DialogFragment
 
     private NewEntryViewModel mViewModel;
     NewEntryFragmentBinding binding;
+
+    NewEntryItemsAdapter newEntryItemsAdapter;
 
     public static NewEntryFragment newInstance()
     {
@@ -60,6 +65,12 @@ public class NewEntryFragment extends DialogFragment
         ArrayAdapter<Entry.Reason> reasonArrayAdapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_spinner_dropdown_item, reasons);
         binding.spnReason.setAdapter(reasonArrayAdapter);
 
+
+        //custom entry items
+        newEntryItemsAdapter = new NewEntryItemsAdapter(MainActivity.diary.getEntrySettings(), getContext());
+
+        binding.recycNewEntryTab4.setLayoutManager(new LinearLayoutManager(getContext()));
+        binding.recycNewEntryTab4.setAdapter(newEntryItemsAdapter);
 
 
 
@@ -151,12 +162,10 @@ public class NewEntryFragment extends DialogFragment
                         .addItem("Worry", worry, EntryItem.Section.EMOTIONS)
                         .addItem("Shame", shame, EntryItem.Section.EMOTIONS)
                         .addItem("Sadness", sad, EntryItem.Section.EMOTIONS)
-                        .addItem("Happiness", happy, EntryItem.Section.EMOTIONS);
+                        .addItem("Happiness", happy, EntryItem.Section.EMOTIONS)
 
-                        //todo: custom and bool
-                        //=======================================================================
-                        //=======================================================================
-
+                        //custom and bool
+                        .addItems(newEntryItemsAdapter.getEntryItems());
 
 
                // MainActivity.log.log("creating entry on " + MainActivity.diary.getCurrentWeek().getToday().getDate().toString(), "entry");

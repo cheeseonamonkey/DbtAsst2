@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.dbtasst2.MainActivity;
 import com.example.dbtasst2.databinding.EntrySettingsFragmentBinding;
@@ -28,6 +29,9 @@ public class EntrySettingsDialogFragment extends DialogFragment
 
     private EntrySettingsViewModel mViewModel;
     EntrySettingsFragmentBinding binding;
+
+    EntrySettingsAdapter entrySettingsAdapter;
+
 
     public static EntrySettingsDialogFragment newInstance()
     {
@@ -48,16 +52,46 @@ public class EntrySettingsDialogFragment extends DialogFragment
         View view=binding.getRoot();
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+        entrySettingsAdapter = new EntrySettingsAdapter(MainActivity.diary.getEntrySettings(), getContext());
+        binding.recycEntrySettings.setLayoutManager(new LinearLayoutManager(getContext()));
+        binding.recycEntrySettings.setAdapter(entrySettingsAdapter);
+
 //=========
 //LISTENERS:
 
-        LinearLayout linRoot = binding.linEntrySettingsRoot;
+        binding.btnEntrySettingsAccept.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                try
+                {
+
+                    MainActivity.diary.setEntrySettings(entrySettingsAdapter.getEntrySettings());
+
+                    Toast.makeText(getContext(), "Entry settings set!", Toast.LENGTH_SHORT).show();
+
+                }catch(Exception exc)
+                {
+                    Toast.makeText(getContext(), "error: " + exc.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        binding.btnNewEntrySettings.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+
+            }
+        });
 
 
 
 //=========
 
-        drawExistingEntrySettings();
+
 
 
         return view;
@@ -65,12 +99,7 @@ public class EntrySettingsDialogFragment extends DialogFragment
 
     }
 
-    public void drawExistingEntrySettings()
-    {
-        binding.recycEntrySettings.setLayoutManager(new LinearLayoutManager(getContext()));
-        binding.recycEntrySettings.setAdapter(new EntrySettingsAdapter(MainActivity.diary.getEntrySettings(), getContext()));
 
-    }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState)

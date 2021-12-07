@@ -17,13 +17,24 @@ public class EntryItem
     //Week parentWeek;
 
 
+    public EntryItem(String name, Type type)
+    {
+        this.name = name;
+        this.type = type;
+    }
 
-
-
-public EntryItem()
+    public EntryItem()
 {
 
 }
+
+    public EntryItem(String name, Value valVal, Type type, Section section)
+    {
+        this.name = name;
+        this.value = valVal;
+        this.section = section;
+        this.type = type;
+    }
 
 
 //yes no constructor

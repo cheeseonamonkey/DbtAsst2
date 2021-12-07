@@ -48,7 +48,7 @@ public class Day
         Entry entOut = new Entry(reason);
         entries.add(entOut);
 
-        MainActivity.log.log("Adding entry: " + entOut.reason.toString(), "Entry");
+        MainActivity.log.log("Adding entry to " + this.getDate().toString() + " : " + entOut.reason.toString(), "Entry");
 
 
 

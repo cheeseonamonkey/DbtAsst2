@@ -326,68 +326,10 @@
                     android:layout_height="match_parent"
                     android:orientation="vertical">
 
-                    <LinearLayout
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recycNewEntryTab4"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="right"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Self-harm" />
-
-                        <Spinner
-                            android:id="@+id/spnSelfHarm"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:minWidth="50dp"
-                            android:minHeight="50dp"
-                            android:spinnerMode="dialog"
-                            android:textAlignment="textEnd" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="right"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Self-validation" />
-
-                        <Spinner
-                            android:id="@+id/spnAttempts"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:minWidth="50dp"
-                            android:minHeight="50dp"
-                            android:spinnerMode="dialog"
-                            android:textAlignment="textEnd" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="right"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Attempts" />
-
-                        <Spinner
-                            android:id="@+id/spnSelfValidation"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:minWidth="50dp"
-                            android:minHeight="50dp"
-                            android:textAlignment="textEnd"
-                            android:spinnerMode="dialog" />
-                    </LinearLayout>
+                        android:layout_height="wrap_content" />
 
                     <Button
                         android:id="@+id/btnNewEntryOkay"
